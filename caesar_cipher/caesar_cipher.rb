@@ -1,11 +1,11 @@
 def caeser_cipher (string, shift)
-  word = string.bytes
-  word = word.map do |byte|
-    start_of_ascii = byte < 91 ? 65 : 97
+  ascii = string.bytes
+  ascii = ascii.map do |byte|
+    base = byte < 91 ? 65 : 97
     if byte.between?(65, 90) || byte.between?(97, 122)
       byte += shift
       unless byte.between?(65, 90) || byte.between?(97, 122)
-        byte = (byte - start_of_ascii) % (26) + start_of_ascii
+        byte = (byte - base) % (26) + base
         byte.chr
       end
       byte.chr
@@ -13,7 +13,7 @@ def caeser_cipher (string, shift)
       byte.chr
     end
   end
-  word = word.join
+  ascii = ascii.join
 end
 
 puts 'Your message:'
