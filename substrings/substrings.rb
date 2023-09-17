@@ -3,11 +3,7 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 def substrings (string, dictionary)
   result = []
   string.downcase!
-  dictionary.each do |word|
-    if string[word]
-      result.push(string[word])
-    end
-  end
+  dictionary.each {|word| result.push(string[word]) if string[word]}
   result.tally
 end
 
