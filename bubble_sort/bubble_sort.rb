@@ -1,12 +1,8 @@
 def bubble(a)
-  n = a.count
   i = 1
 
-  while i < n
-    a = a.each_index do |i| 
-      next if a[i+1] == nil 
-      a[i], a[i+1] = a[i+1], a[i] if a[i+1] < a[i]
-    end
+  while i < a.count
+    a = a.each_index {|i| (a[i], a[i+1] = a[i+1], a[i]) if (a[i+1] != nil && a[i+1] < a[i])}
     i += 1
   end
   a
