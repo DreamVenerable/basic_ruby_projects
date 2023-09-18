@@ -1,4 +1,4 @@
-def bubble(a)
+def bubble_sort(a)
   i = 1
 
   while i < a.count
@@ -8,4 +8,4 @@ def bubble(a)
   a
 end
 
-p bubble([9,8,7,6,5,9,0,2,8,7,4,1,3,0,4,6,5,1])
+p bubble_sort([7,5,9,0,2,8,7,4,1,6,5,1])
